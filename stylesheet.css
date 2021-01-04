@@ -1,0 +1,434 @@
+/* general text formatting */
+/*account registration*/
+body.form {
+   font-size: 100%;
+   overflow-x: hidden; /*--right gutter fix--*/
+   font-family: sans-serif;
+   color: black;
+   background-image:  url('img/c9c8.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+}
+
+/*view/edit student info*/
+body.info {
+	overflow-x: hidden; /*--right gutter fix--*/
+	font-family: sans-serif;
+	color: #505962;
+}
+
+/*landing page*/
+body.land {
+    overflow-x: hidden; /*--right gutter fix--*/
+    font-family: sans-serif;
+    color: #505962;
+}
+
+/*form formatting*/
+/*account registration and/or announcement*/
+
+#loginform {
+  margin: 6em;
+}
+
+#register {
+  background: white;
+  position: relative;
+  padding: 4em;
+}
+
+legend.accreg {
+   background-color: black ;
+   margin: 0 auto;
+   width: 90%;
+   padding: 0.25em;
+   text-align: center;
+   font-weight: bold;
+   font-size: 100%;
+   color: white;
+}
+
+table.accreg {
+	width:100%;
+}
+
+table td.accreg {
+	width: 50%;
+}
+ 
+td #tb1 {
+	width: 100%;
+	height: 30%;
+}
+
+form #button{
+	background-color: #505962;
+	text-align: center;
+	padding: 5px;
+}
+
+/*announcement*/
+fieldset.annc {
+	max-width:600px;
+	margin:2em auto;
+	border: 1px solid black;
+	padding: 20px;
+	background-color: white ;
+    
+}
+
+legend.annc {
+   background-color: black ;
+   margin: 0 auto;
+   width: 90%;
+   padding: 0.25em;
+   text-align: center;
+   font-weight: bold;
+   font-size: 100%;
+   color: white;
+}
+
+.rectangle {
+   background-color: #505962;
+   padding: 0.3em 0.3em;
+   color: white;
+}
+
+.centered {
+   text-align: center;
+}
+
+#id1 {
+  display:table;
+  width:100%
+}
+
+/*view/edit student info*/
+table.info {
+	background-color: #e8e8e8;
+	width : 50%;
+}
+
+table th.info{
+	font-size:1em;
+	padding:1em;
+	width:25%;
+}
+
+table td.info{
+	padding-top:1em;
+	padding-bottom:1em;
+	padding-right:1em;
+}
+
+input.info {
+	font-family: Arial;
+	width: 30em;
+	resize: horizontal;
+}
+
+div .form, .start {
+	padding-left: 3em;
+}
+
+div.start {
+	padding-top: 7em;
+}
+
+/*register student*/
+table th.studreg{
+	font-size:1em;
+	padding:1em 2em 1em 1em;
+	color:#666;
+	background:white;
+}
+
+table td.studreg{
+	padding:1em 3em 1em 3em;
+	background:#52c1e3;
+	border:1px solid #bbbbbb;
+}
+
+input.studreg {
+	font-family: Arial;
+	width: 30em;
+	resize: horizontal;
+}
+
+/*view/edit student + register*/
+.btn {
+  border: solid 1px grey;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+	background: #c2c2c2;
+}
+
+/*-- Marks and Result --*/
+.marks-head, .result-head{
+	margin: 3% 20% 3% 40%;
+}
+
+.marks-head img, .result-head img{
+  height: 5rem;
+  margin-top: 0.5rem;
+  float: left;
+}
+
+#menu{
+	float: right;
+}
+#menu img{
+	width:3%;	
+}
+
+
+#marks table, #result table{
+	margin: 3% auto;
+}
+
+#marks th, #result th{
+	border: 1px solid black;
+	padding:6px;
+	background: #D3D3D3;
+}
+
+#marks td, #result td{
+	border: 1px solid black;
+	padding:4px;
+	background: #F8F8FF;
+}
+
+#subres{
+	margin-left: 60%;
+	margin-bottom: 3%
+}
+
+#bapr{
+	margin-left: 46%;
+	margin-bottom: 3%
+}
+
+#marks #bsrb{
+	margin-left: 60%;
+	margin-bottom: 3%
+}
+
+#result #bpb{
+	margin-left: 46%;
+	margin-bottom: 3%
+}
+
+#formspace{
+	margin-top: 6em;
+	margin-bottom: 4em;
+}
+
+#formbackground
+{
+	background: white;
+	padding: 2em;
+	border-radius: 15px;
+}
+
+/*page reload transition*/
+@-webkit-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.page {
+ animation-name: fade;
+ animation-duration: 3s; 
+ animation-fill-mode: forwards; 
+}
+
+/*footer stuff*/
+.footer .row{
+  background-color: #505962;
+  padding: 1rem 2rem 3rem;
+  color: white;
+}
+
+.footer img{
+  height: 6rem;
+  margin-top: 2rem;
+}
+
+/*landing page stuff*/
+.navbar{
+  text-transform: uppercase;
+  background-color: #505962;
+}
+.navbar-brand img{
+  height: 3rem;
+}
+
+.home-inner{
+  background-image: url('img/landing2.jpeg');
+}
+
+.caption{
+  width:100%;
+  max-width: 100%;
+  position: absolute;
+  top:40%;
+  z-index: 1;
+}
+
+.caption h3{
+  color: white;
+  font-size:2.4rem;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+
+
+.btn{
+  border-width: medium;
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: .5rem 1.1rem;
+}
+
+h3.heading {
+  text-align: center;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1.9rem;
+}
+
+.padding{
+  padding:2rem 0;
+}
+
+img.events{
+  max-width:100%;
+}
+
+.no-padding .col-md-6 {
+  padding: 0;
+}
+
+.card {
+  margin: 2rem;
+}
+
+/*--- Landing Page Fix --*/
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background: #E9ECEF;
+  z-index: -1;
+}
+.home-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-inner {
+  position: fixed;
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+
+
+
+/*------------------------------ hover Fix ----------------------*/
+
+.containerH {
+  position: relative;
+
+}
+
+.imageH {
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middleH {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containerH:hover .imageH {
+  opacity: 0.3;
+  
+}
+
+.containerH:hover .middleH {
+  opacity: 1;
+}
+
+.textH {
+	background-color: rgba(0, 0, 0, 0.75);
+	color: white;
+	font-size: 12px;
+	padding: 16px 32px;
+}
+
+.sb{
+	margin-left:5.5%;
+}
+
+.mbox{
+	padding: 1px 2px;
+	margin: 1px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#sbox{
+	float:right;
+	margin-right:50%;
+}
+
+#exdate{
+	margin-left: 32.5%;
+}
+
+#edselect{
+	margin-left: 40.5%;
+}
