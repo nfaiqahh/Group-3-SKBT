@@ -10,7 +10,7 @@ while( $record1 = mysqli_fetch_assoc($resultset1)) {
 	$j++;
 }
 
-$sql = "SELECT * FROM `event` order by EventID desc limit 3";
+$sql = "SELECT * FROM `event` where EventDate > date_add(curdate(), interval 1 day) order by EventDate";
 $conn = mysqli_connect("localhost","root","","group11_db") or die("Connection failed: " . mysqli_connect_error());
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 $i = 0;
@@ -44,7 +44,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	<div class="collapse navbar-collapse" id="menu">
 		<ul class="navbar-nav ml-auto">
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "tc")
-				{ 
+				{
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
 					</li>';
@@ -56,7 +56,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 				{ echo '<li class="nav-item"><a class="nav-link" href="postEvent.php">POST AN EVENT</a></li>'; }
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "gd")
-				{ 
+				{
 					echo '<li class="nav-item"><a class="nav-link" href="GDviewStudent.php">STUDENT</a></li>';
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
@@ -76,11 +76,11 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#contacts">CONTACT</a>
-					</li>';	
+					</li>';
 				}
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "st")
-				{ 
+				{
 					echo '<li class="nav-item"><a class="nav-link" href="result.php">RESULT</a></li>';
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
@@ -99,11 +99,11 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#contacts">CONTACT</a>
-					</li>';	
+					</li>';
 				}
-			?>			
+			?>
 			<?php if (empty($_SESSION['sesh_user']))
-				{ 
+				{
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
 					</li>';
@@ -121,10 +121,10 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#contacts">CONTACT</a>
-					</li>';	
+					</li>';
 				}
 			?>
-			<li class="nav-item">      
+			<li class="nav-item">
                 <?php $param = isset($_SESSION['sesh_user']) ? "logout.php" : "login.php";?>
 				<a class="nav-link" href="<?=$param; ?>">
                 <?php $param = isset($_SESSION['sesh_user']) ? "LOGOUT" : "LOGIN";?>
@@ -132,7 +132,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
                 </a>
 			</li>
 			<li class="nav-item">
-				<?php 
+				<?php
                 if (isset($_SESSION['sesh_user']))
                     $param = '<img id="useric" alt="User Icon" src="img/user.png" style="height:15px;width:15px;margin-top:10px;">'.$_SESSION['sesh_type'].'</a>';
                 else
@@ -153,7 +153,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 </div>
 <!-- Start Landing Page Caption -->
 <div class="caption center-block text-center" id = "home">
-	<h3><b>Welcome to<br> 
+	<h3><b>Welcome to<br>
 	Sekolah Kebangsaan Bukit Tinggi</b></h3>
 </div>
 <!-- End Landing Page Section -->
@@ -168,7 +168,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	<div class="col-md-4 text-center">
 		<h4><b>Vision</b></h4>
 		<p > <i>Our vision is to develop well rounded, confident and responsible individuals who aspire to achieve
-		their full potential. We will do this by providing a welcoming, happy, safe, and supportive learning 
+		their full potential. We will do this by providing a welcoming, happy, safe, and supportive learning
 		environment in which everyone is equal and all achievements are celebrated.</i></p>
 	</div>
 	<div class="col-md-4 text-center">
@@ -179,12 +179,10 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 		<h4><b>Slogan</b></h4>
 		<p><i>DREAM, BELIEVE, ACHIEVE</i></p>
 	</div>
-	
+
 </div><!-- End Row-->
 </div><!-- End Jumbotron -->
 </div><!-- End About Section -->
-
-
 
 <!-- Start of Announcement -->
 <div id="announcement">
@@ -199,50 +197,50 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 				<h4><?php echo $announcement[0][1]; ?></h4>
 				<p><?php echo $announcement[0][4]; ?></p>
 				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#aModal1">See more..</button>
-				
-			
+
+
 			</div>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="card text-center">
-			
+
 			<div class="card-body">
 				<h4><?php echo $announcement[1][1]; ?></h4>
 				<p><?php echo $announcement[1][4]; ?></p>
 				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#aModal2">See more..</button>
-				
-			
+
+
 			</div>
 		</div>
 	</div>
 
 	<div class="col-md-3">
 		<div class="card text-center">
-			
+
 			<div class="card-body">
 				<h4><?php echo $announcement[2][1]; ?></h4>
 				<p><?php echo $announcement[2][4]; ?></p>
 				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#aModal3">See more..</button>
-				
-			
+
+
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="col-md-3">
 		<div class="card text-center">
-			
+
 			<div class="card-body">
 				<h4><?php echo $announcement[3][1]; ?></h4>
 				<p><?php echo $announcement[3][4]; ?></p>
 				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#aModal4">See more..</button>
-				
-			
+
+
 			</div>
 		</div>
 	</div>
-	
+
 </div><!--End of Row -->
 </div><!--End of Container Fluid -->
 </div><!--End of Announcement -->
@@ -251,7 +249,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	  <!-- Modal -->
 	  <div class="modal fade" id="aModal1" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -270,17 +268,17 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 	<div class="container">
 	  <!-- Modal -->
 	  <div class="modal fade" id="aModal2" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -299,17 +297,17 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 	<div class="container">
 	  <!-- Modal -->
 	  <div class="modal fade" id="aModal3" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -328,17 +326,17 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
-	
+
 	<div class="container">
 	  <!-- Modal -->
 	  <div class="modal fade" id="aModal4" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -357,10 +355,10 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 
@@ -368,44 +366,34 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 <div id="events">
 <div class="container-fluid padding">
 	<h3 class ="heading">Events</h3>
+<?php
+$i = 0;
+	foreach($event as $e){
+		if($i%3==0){
+			echo '<div class="row padding">';
+		}
+		?>
+		<div class="col-md-4">
+			<div class="card text-center">
+				<img alt=<?php echo $event[$i][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[$i][0]; ?>">
+				<div class="card-body">
+					<h4><?php echo $event[$i][1]; ?></h4>
+					<p><?php echo $event[$i][2]; ?></p>
+					<p><?php echo $event[$i][3]; ?></p>
+					<?php $c = $i+1 ?>
+					<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal+<?php $c ?>">See more..</button>
+				</div>
+			</div>
+		</div>
+		<?php
+		if($i%3==2){
+			echo '</div><!--End of Row -->';
+		}
+		$i++;
+	}
+	?>
 
-<div class="row padding">
-	<div class="col-md-4">
-		<div class="card text-center">
-			<img alt=<?php echo $event[0][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[0][0]; ?>">
-			<div class="card-body">
-				<h4><?php echo $event[0][1]; ?></h4>
-				<p><?php echo $event[0][2]; ?></p>
-				<p><?php echo $event[0][3]; ?></p>
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">See more..</button>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="card text-center">
-			<img alt=<?php echo $event[1][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[1][0]; ?>">
-			<div class="card-body">
-				<h4><?php echo $event[1][1]; ?></h4>
-				<p><?php echo $event[1][2]; ?></p>
-				<p><?php echo $event[1][3]; ?></p>
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2">See more..</button>
-			</div>
-		</div>
-	</div>
 
-	<div class="col-md-4">
-		<div class="card text-center">
-			<img alt=<?php echo $event[2][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[2][0]; ?>">
-			<div class="card-body">
-				<h4><?php echo $event[2][1]; ?></h4>
-				<p><?php echo $event[2][2]; ?></p>
-				<p><?php echo $event[2][3]; ?></p>
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal3">See more..</button>
-			</div>
-		</div>
-	</div>
-	
-</div><!--End of Row -->
 </div><!--End of Container Fluid -->
 </div><!--End of Events -->
 
@@ -413,7 +401,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	  <!-- Modal -->
 	  <div class="modal fade" id="myModal1" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -432,17 +420,17 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 	<div class="container">
 	  <!-- Modal -->
 	  <div class="modal fade" id="myModal2" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -461,17 +449,17 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 	<div class="container">
 	  <!-- Modal -->
 	  <div class="modal fade" id="myModal3" role="dialog">
 	    <div class="modal-dialog">
-	    
+
 	      <!-- Modal content-->
 	      <div class="modal-content">
 	        <div class="modal-header">
@@ -490,10 +478,10 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
-	      
+
 	    </div>
 	  </div>
-	  
+
 	</div>
 
 <!-- Start of Management Section -->
@@ -531,7 +519,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="col-md-3">
 		<div class="card text-center">
 			<div class = "containerH"><img class="card-img-top imageH" alt="Mr. Syamil Anuar Portrait" src="img/tphep.jpg">
@@ -554,7 +542,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 				<div class="middleH">
 							<div class="textH"> BR004 <br> fabash@gmail.com <br> 013-0384547 </div>
 				</div>
-			</div>	
+			</div>
 			<div class="card-body">
 				<h4>Mr. Faris Bashir </h4>
 				<p>Deputy Director of Cocurricular Activies</p>
@@ -562,11 +550,11 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 			</div>
 		</div>
 	</div>
-	
+
 </div><!--End of Row -->
 </div><!-- End of Management Section -->
 
-<!-- Start of Contact Section -->	
+<!-- Start of Contact Section -->
 <div class="container-fluid footer" id = "contacts">
 <div class="row">
 
