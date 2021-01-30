@@ -81,6 +81,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "st")
 				{ 
+					echo '<li class="nav-item"><a class="nav-link" href="timetable.php">TIMETABLE</a></li>';
 					echo '<li class="nav-item"><a class="nav-link" href="result.php">RESULT</a></li>';
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
@@ -497,7 +498,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 	</div>
 
 <!-- Start of Management Section -->
-<div id="management">
+<div id="management">About
 	<h3 class="heading">Management</h3>
 
 <div class="row padding">
