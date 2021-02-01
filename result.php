@@ -111,6 +111,26 @@
 		#desc{
 			margin-left: 35.0%;
 		}
+		.alert{
+			padding: 20px;
+			background-color: #666;
+			color: white;
+		}
+
+		.closebtn{
+			margin-left: 15px;
+			color: white;
+			font-weight: bold;
+			float: right;
+			font-size: 22px;
+			line-height: 20px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.closebtn:hover{
+			color: black;
+		}
 	</style>
 </head>
 
@@ -140,6 +160,11 @@
 		<div class="col-md-3"></div>
 		<div class="col-md-6 text text-center">
 			<br><br><br>
+			<!-- Start of Alert Bar -->
+			<div class="alert">
+				<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				<strong>Reminder:</strong> Please select exam date to view the result.
+			</div>
 			<img src="img/Logo_SKBT.png" alt="school logo">
 			<strong>SK Bukit Tinggi, Klang</strong>
 			<strong>Examination Result</strong>
