@@ -80,7 +80,8 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 				}
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "st")
-				{
+				{ 
+					echo '<li class="nav-item"><a class="nav-link" href="timetable.php">TIMETABLE</a></li>';
 					echo '<li class="nav-item"><a class="nav-link" href="result.php">RESULT</a></li>';
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
