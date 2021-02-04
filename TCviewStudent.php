@@ -1,8 +1,8 @@
 <?php
  session_start();  
  $connect = mysqli_connect("localhost", "root", "", "group11_db");  
- $query = "SELECT StudID, StudFName, StudLName, ClassGrade, ClassName FROM student,class,assignment,teacher WHERE student.ClassID = class.ClassID AND class.ClassID = assignment.ClassID AND assignment.TeachID = teacher.TeachID AND teacher.TeachID = ".$_SESSION['sesh_id'];  
- $result = mysqli_query($connect, $query);  
+ $query = "SELECT StudID, StudFName, StudLName ,ClassGrade, ClassName, ClassNum FROM student,class,assignment,teacher WHERE student.ClassID = class.ClassID AND class.ClassID = assignment.ClassID AND assignment.TeachID = teacher.TeachID AND teacher.TeachID = ".$_SESSION['sesh_id'];  
+ $result = mysqli_query($connect, $query); 
  ?>  
  <!DOCTYPE html>  
  <html>  
@@ -30,12 +30,12 @@
 								  ?>  
 								  <tr>  
 									   <td><?php echo $row["StudFName"]." ".$row["StudLName"]; ?></td>  
-									   <td><?php echo $row["ClassGrade"]." ".$row["ClassName"]; ?></td>  
+									   <td><?php echo $row['ClassNum']." ".$row["ClassName"]; ?></td>  
 									   <td><input type="button" name="view" value="view" id="<?php echo $row["StudID"]; ?>" class="btn btn-info btn-xs view_data" /></td>  
 								  </tr>  
 								  <?php  
 							  }  
-							  ?>  
+							?>  
                      </table>  
 					 
 					 <?php

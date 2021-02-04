@@ -50,6 +50,7 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 					</li>';
 					echo '<li class="nav-item"><a class="nav-link" href="TCviewStudent.php">STUDENT</a></li>';
 					echo '<li class="nav-item"><a class="nav-link" href="announcement.php">POST AN ANNOUNCEMENT</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" href="discussion.php">DISCUSSION BOARD</a></li>';
 				}
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "tc" && $_SESSION['is_admin'] == 'y')
