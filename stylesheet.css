@@ -227,6 +227,8 @@ input.studreg {
 #formspace{
 	margin-top: 6em;
 	margin-bottom: 4em;
+
+
 }
 
 #formbackground
@@ -234,6 +236,7 @@ input.studreg {
 	background: white;
 	padding: 2em;
 	border-radius: 15px;
+
 }
 
 /*page reload transition*/

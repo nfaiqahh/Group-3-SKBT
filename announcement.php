@@ -9,7 +9,7 @@
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {	
 		if (isset($_POST['isClass'])) {
 			$attribute = "AnnounceTitle, AnnounceContent, IsClass, TeachID, AnnounceMedia";
-			$values = "'".$_POST['AnnouncementTitle']."', '".$_POST['AnnouncementContent']."', '".$_POST['isClass']."', ".$_SESSION['sesh_id'];
+			$values = "'".$_POST['AnnouncementTitle']."', '".$_POST['AnnouncementContent']."', '".$_POST['isClass']."',".$_SESSION['sesh_id'];
 			$picObj = new Pic();
 			$picObj->insertPic("Announcement", $attribute, $_FILES['AnnouncementMedia']['tmp_name'], $values);
 			

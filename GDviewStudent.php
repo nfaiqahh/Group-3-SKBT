@@ -58,7 +58,7 @@
 					 <button type="button" class="btn btn-default" onclick="window.location='registerstudent.php';" >Register New Student</button>
 					 <button type="button" class="btn btn-default" onclick="window.location='MainPageSKBT.php';" >Back</button>
                 </div>  
-           </div>  
+           </div>
       </body>  
  </html>  
  <div id="dataModal" class="modal fade">  
