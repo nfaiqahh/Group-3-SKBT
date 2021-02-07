@@ -81,8 +81,16 @@ while( $record = mysqli_fetch_assoc($resultset)  ) {
 				}
 			?>
 			<?php if (isset($_SESSION['sesh_user']) && $_SESSION['sesh_type'] == "st")
+<<<<<<< HEAD
 				{ 
 					echo '<li class="nav-item"><a class="nav-link" href="timetable.php">TIMETABLE</a></li>';
+=======
+				{
+<<<<<<< Updated upstream
+=======
+					echo '<li class="nav-item"><a class="nav-link" href="timetable.php">TIMETABLE</a></li>';
+>>>>>>> Stashed changes
+>>>>>>> b66381d2e5d759c1acbdbd9becf87c7d01bc6673
 					echo '<li class="nav-item"><a class="nav-link" href="result.php">RESULT</a></li>';
 					echo '<li class="nav-item">
 						<a class="nav-link" href="#home">HOME</a>
@@ -383,8 +391,13 @@ $i = 0;
 					<p><?php echo $event[$i][2]; ?></p>
 					<p><?php echo $event[$i][3]; ?></p>
 					<?php $c = $i+1 ?>
-					<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal+<?php $c ?>">See more..</button>
+					<?php $c = (string)$c ?>
+					<?php $m= "#myModal".$c ?>
+					<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="<?php echo $m ?>">See more..</button>
+<<<<<<< HEAD
+=======
 				</div>
+>>>>>>> b66381d2e5d759c1acbdbd9becf87c7d01bc6673
 			</div>
 		</div>
 		<?php
@@ -399,92 +412,62 @@ $i = 0;
 </div><!--End of Container Fluid -->
 </div><!--End of Events -->
 
+<<<<<<< HEAD
+	<?php
+		$i= 0;
+		foreach ($event as $e) {
+			$c = $i+1;
+			$c = (string)$c;
+		$m = "myModal".$c;
+	?>
+=======
+<?php
+$i= 0;
+foreach ($event as $e) {
+	$c = $i+1;
+	$c = (string)$c;
+  $m = "myModal".$c;
+?>
+>>>>>>> b66381d2e5d759c1acbdbd9becf87c7d01bc6673
 	<div class="container">
-	  <!-- Modal -->
-	  <div class="modal fade" id="myModal1" role="dialog">
-	    <div class="modal-dialog">
+		<!-- Modal -->
+		<div class="modal fade" id="<?php echo $m ?>" role="dialog">
+			<div class="modal-dialog">
 
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header">
-	        	<h4 class="modal-title">Event Details</h4>
-	          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	        </div>
-	        <div class="modal-body">
-	          <img alt=<?php echo $event[0][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[0][0]; ?>">
-	          <p></p>
-	          <h4><?php echo $event[0][1]; ?></h4>
-	          <em>Event Date: <?php echo $event[0][2]; ?></em>
-	          <p></p>
-	          <p><?php echo $event[0][5]; ?></p>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Event Details</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<img alt=<?php echo $event[$i][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[$i][0]; ?>">
+						<p></p>
+						<h4><?php echo $event[$i][1]; ?></h4>
+						<em>Event Date: <?php echo $event[$i][2]; ?></em>
+						<p></p>
+						<p><?php echo $event[$i][5]; ?></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
 
-	    </div>
-	  </div>
+			</div>
+		</div>
 
 	</div>
-
-	<div class="container">
-	  <!-- Modal -->
-	  <div class="modal fade" id="myModal2" role="dialog">
-	    <div class="modal-dialog">
-
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header">
-	        	<h4 class="modal-title">Event Details</h4>
-	          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	        </div>
-	        <div class="modal-body">
-	          <img alt=<?php echo $event[1][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[1][0]; ?>">
-	          <p></p>
-	          <h4><?php echo $event[1][1]; ?></h4>
-	          <em>Event Date: <?php echo $event[1][2]; ?></em>
-	          <p></p>
-	          <p><?php echo $event[1][5]; ?></p>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-
-	    </div>
-	  </div>
-
-	</div>
-
-	<div class="container">
-	  <!-- Modal -->
-	  <div class="modal fade" id="myModal3" role="dialog">
-	    <div class="modal-dialog">
-
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header">
-	        	<h4 class="modal-title">Event Details</h4>
-	          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	        </div>
-	        <div class="modal-body">
-	          <img alt=<?php echo $event[2][0]; ?>" class="card-img-top" src="source.php?id=<?php echo $event[2][0]; ?>">
-	          <p></p>
-	          <h4><?php echo $event[2][1]; ?></h4>
-	          <em>Event Date: <?php echo $event[2][2]; ?></em>
-	          <p></p>
-	          <p><?php echo $event[2][5]; ?></p>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-
-	    </div>
-	  </div>
-
-	</div>
+<<<<<<< HEAD
+	<?php
+		$i++;
+		}
+	?>
+=======
+<?php
+$i++;
+}
+?>
+>>>>>>> b66381d2e5d759c1acbdbd9becf87c7d01bc6673
 
 <!-- Start of Management Section -->
 <div id="management">
